@@ -1,0 +1,15 @@
+[gd_resource type="BulletType" load_steps=3 format=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 30.0
+
+[sub_resource type="StreamTexture" id=2]
+load_path = "res://.import/redTalisman.png-4ccff8ed944d772ca61068c7dc90ca6b.stex"
+
+[resource]
+speed = 3000.0
+texture = SubResource( 2 )
+collision_shape = SubResource( 1 )
+collision_mask = 8
+custom_data = {
+}

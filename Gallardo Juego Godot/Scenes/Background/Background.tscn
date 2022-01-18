@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/Background/Background.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Background2/foreground.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Background2/background.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Background/BoundaryBox.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 255 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 8, 256 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 152, 8 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 152, 8 )
+
+[node name="BackgroundManger" type="Node2D"]
+
+[node name="BoundaryBox" type="StaticBody2D" parent="." groups=[
+"Wall",
+]]
+collision_layer = 1056
+collision_mask = 3
+script = ExtResource( 4 )
+
+[node name="RSide" type="CollisionShape2D" parent="BoundaryBox"]
+position = Vector2( 182.15, 35.0571 )
+shape = SubResource( 1 )
+
+[node name="LSide" type="CollisionShape2D" parent="BoundaryBox"]
+position = Vector2( -121.85, 35.0571 )
+shape = SubResource( 5 )
+
+[node name="DSide" type="CollisionShape2D" parent="BoundaryBox"]
+position = Vector2( 30.1504, -220.943 )
+shape = SubResource( 6 )
+
+[node name="USiede" type="CollisionShape2D" parent="BoundaryBox"]
+position = Vector2( 30.1504, 283.057 )
+shape = SubResource( 4 )
+
+[node name="backgroundSprites" type="Node2D" parent="."]
+script = ExtResource( 1 )
+
+[node name="background" type="Sprite" parent="backgroundSprites"]
+position = Vector2( -5.65741, 0.387421 )
+texture = ExtResource( 3 )
+region_enabled = true
+
+[node name="foreground" type="Sprite" parent="backgroundSprites"]
+position = Vector2( -11.2697, 34.0613 )
+texture = ExtResource( 2 )
+region_enabled = true

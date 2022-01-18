@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/bullets/cyanTalisman.png" type="Texture" id=1]
+
+[sub_resource type="BulletType" id=1]
+speed = 3000.0
+texture = ExtResource( 1 )
+custom_data = {
+
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BulletSpawner" type="BulletSpawner" parent="."]
+position = Vector2( 472.176, 481.976 )
+autofire = true
+interval_frames = 4
+radius = 0.0
+arc_rotation = -1.5708
+arc_offset = 0.19
+bullet_type = SubResource( 1 )
